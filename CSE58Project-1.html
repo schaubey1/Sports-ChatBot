@@ -20,11 +20,70 @@
 <meta charset="UTF-8"> 
 <meta name="viewport" content="width=device-width, initial-scale=1"> 
 <style> 
+
+
 * { 
   box-sizing: border-box; 
 } 
  
+/* The side navigation menu */
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 171px;
+  background-color: #ffffff;
+  position: absolute;
+  
+  height: 100%;
+  overflow: auto;
+}
 
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: #FFFFFF;
+  color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
 body { 
   font-family: Arial, Helvetica, sans-serif; 
   margin: 0; 
@@ -92,7 +151,7 @@ body {
 .side { 
   -ms-flex: 30%; /* IE10 */ 
   flex: 30%; 
-  background-color: #f1f1f1; 
+  background-color: #ffffff; 
   padding: 20px; 
 } 
  
@@ -141,15 +200,26 @@ body {
   <h2>Sports Bot</h2>
   <h5>Conrad Pereira, Sunny Chaubey, Shania Andrews</h5>
   <p><b></b></p>
+  
 </div>
+
+ </div>
+ <div class="sidebar">
+  <a href="https://people.ucsc.edu/~colperei/CSE58Project-1.html" >Home</a>
+  <a href="#news">News</a>
+  <a href="mailto:colperei@ucsc.edu">Contact</a>
+  <a href="#about">About</a>
+</div>
+
+
+
 <div align="center">
 <iframe src="https://scores.nbcsports.com/score_ticker_lt/index.html" style="height:80px;width:1096px;"></iframe>
 <div class="feedgrabbr_widget" id="fgid_3f8a6120abb3a3a39cb54184e"></div>
 <script>if (typeof (fg_widgets) === "undefined") fg_widgets = new Array(); fg_widgets.push("fgid_3f8a6120abb3a3a39cb54184e");</script>
 <script async src="https://www.feedgrabbr.com/widget/fgwidget.js"></script>
 
- </div>
- 
+
  <script>
   var div = document.createElement('div');
   div.className = 'fb-customerchat';
@@ -182,6 +252,10 @@ body {
   }, 0);
 </script>
 
+
+
+
+
 //<!-- Default Statcounter code for Chatbot
 //https://people.ucsc.edu/~colperei/CSE58Project.html -->
 <script type="text/javascript">
@@ -202,7 +276,7 @@ alt="Web Analytics Made Easy -
 StatCounter"></a></div></noscript>
 <!-- End of Statcounter Code -->
 <a
-href="https://statcounter.com/p12192885/?guest=1">Statistics</a>
+href="https://statcounter.com/p12192885/?guest=1"></a>
   
   
  
